@@ -1,9 +1,6 @@
 import React from "react";
 import { CSSReset, ThemeProvider, Box, Text } from "@chakra-ui/core";
 
-import logo from "./logo.svg";
-import "./App.css";
-
 function App() {
   return (
     <ThemeProvider>
