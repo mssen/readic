@@ -26,6 +26,7 @@ function App() {
       <main>
         {users.map((user) => (
           <Box
+            key={user.id}
             border="1px"
             borderRadius="md"
             borderColor="gray.300"
