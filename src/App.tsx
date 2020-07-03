@@ -15,7 +15,7 @@ function App() {
   useEffect(() => {
     const fetchTest = async () => {
       const userSnapshot = await firestore.collection("users").get();
-      setUsers(userSnapshot.docs.map(collectIdsAndData));
+      setUsers(userSnapshot.docs.map(collectIdsAndData<UserDoc>()));
     };
     fetchTest();
   }, []);

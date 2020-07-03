@@ -1,6 +1,5 @@
 import { firestore } from "firebase";
 
-// TODO: look into options to type this better
-export const collectIdsAndData = (
+export const collectIdsAndData = <T extends { id: string }>() => (
   doc: firestore.QueryDocumentSnapshot<firestore.DocumentData>
-) => ({ id: doc.id, ...doc.data() } as any);
+) => ({ id: doc.id, ...doc.data() } as T);
