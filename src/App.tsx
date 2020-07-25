@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { CSSReset, ThemeProvider, Box, Text } from "@chakra-ui/core";
+import React, { useEffect, useState } from 'react';
+import { CSSReset, ThemeProvider, Box, Text } from '@chakra-ui/core';
 
-import { firestore } from "./firebase";
-import { collectIdsAndData } from "./utilitis";
-import FicList from "./FicList";
+import { firestore } from './firebase';
+import { collectIdsAndData } from './utilitis';
+import FicList from './FicList';
 
 interface UserDoc {
   id: string;
@@ -27,14 +27,14 @@ function App() {
 
   useEffect(() => {
     const fetchTest = async () => {
-      const userRef = firestore.collection("users").doc("VZp12eWFrMFxp5wFzWAd");
+      const userRef = firestore.collection('users').doc('VZp12eWFrMFxp5wFzWAd');
 
       const userDoc = await userRef.get();
       if (userDoc.exists) {
         setUser(userDoc.data() as UserDoc);
       }
 
-      const ref = userRef.collection("feeds");
+      const ref = userRef.collection('feeds');
       setFeedRef(ref);
       const feedSnapshot = await ref.get();
       setFeeds(feedSnapshot.docs.map(collectIdsAndData<FeedDoc>()));
@@ -55,7 +55,7 @@ function App() {
           m="2"
           p="2"
         >
-          <Text>{user?.username ?? "No user found"}</Text>
+          <Text>{user?.username ?? 'No user found'}</Text>
         </Box>
         {feeds.map((feed) => (
           <React.Fragment key={feed.id}>

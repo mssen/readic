@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { Box } from "@chakra-ui/core";
+import React, { useState, useEffect } from 'react';
+import { Box } from '@chakra-ui/core';
 
-import { collectIdsAndData } from "./utilitis";
+import { collectIdsAndData } from './utilitis';
 
 interface Props {
   feedRef: firebase.firestore.CollectionReference<
@@ -44,7 +44,7 @@ const FicList = ({ feedRef, feedId }: Props) => {
 
   useEffect(() => {
     const fetchFics = async () => {
-      const ficsSnapshot = await feedRef.doc(feedId).collection("fics").get();
+      const ficsSnapshot = await feedRef.doc(feedId).collection('fics').get();
       setFics(ficsSnapshot.docs.map(collectIdsAndData<FicDoc>()));
     };
     fetchFics();
