@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Box } from '@chakra-ui/core';
 
-import { collectIdsAndData } from './utilitis';
+import { collectIdsAndData } from './utilities';
 
 interface Props {
   feedRef: firebase.firestore.CollectionReference<
@@ -51,7 +51,7 @@ const FicList = ({ feedRef, feedId }: Props) => {
   });
 
   return (
-    <React.Fragment>
+    <>
       {fics.map((fic) => (
         <Box
           border="1px"
@@ -66,7 +66,7 @@ const FicList = ({ feedRef, feedId }: Props) => {
           {fic.title}
         </Box>
       ))}
-    </React.Fragment>
+    </>
   );
 };
 

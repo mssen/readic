@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { CSSReset, ThemeProvider, Box, Text } from '@chakra-ui/core';
 
 import { firestore } from './firebase';
-import { collectIdsAndData } from './utilitis';
+import { collectIdsAndData } from './utilities';
 import FicList from './FicList';
 
 interface UserDoc {
